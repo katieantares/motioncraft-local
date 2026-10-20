@@ -5,3 +5,7 @@ compatibility_date = "2024-09-23"
 [assets]
 directory = "."
 binding = "ASSETS"
+
+[vars]
+NOTIFICATION_EMAIL = "globalexercises@gmail.com"
+NOTIFY_FROM = "Motion Craft Global <notify@leads.motioncraftglobal.com>"
