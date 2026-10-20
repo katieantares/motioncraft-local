@@ -42,9 +42,11 @@ export default {
         })
       });
 
-      return new Response(response.ok ? 'ok' : 'Unable to send', {
-        status: response.ok ? 200 : 502
-      });
+      if (!response.ok) {
+        const errBody = await response.text();
+        return new Response('Resend error: ' + errBody, { status: 502 });
+      }
+      return new Response('ok', { status: 200 });
     }
 
     return env.ASSETS.fetch(request);
