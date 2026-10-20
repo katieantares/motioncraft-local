@@ -34,7 +34,7 @@ export default {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          from: env.RESEND_FROM || 'Motion Craft Global <onboarding@resend.dev>',
+          from: env.NOTIFY_FROM || env.RESEND_FROM || 'Motion Craft Global <onboarding@resend.dev>',
           to: [env.NOTIFICATION_EMAIL],
           reply_to: form.get('email') || undefined,
           subject: 'New lead — Motion Craft Global',
